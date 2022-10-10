@@ -3,7 +3,6 @@ import Cell from "../cell/cell";
 
 const Strip = () => {
     const example = 'hello world'
-
     const [strip, setStrip] = useState(example.split(''))
     const prettyStrip = strip.map((el, i) => {
         return {id: i, char: el === ' ' ? '_' : el}
