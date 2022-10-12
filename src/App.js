@@ -25,8 +25,8 @@ function App() {
     useEffect(()=>{
         if(example) {
             if(val < 0 || val > example.length - 1) {
+                reset()
                 setError('your code is incorrect, Neo')
-                setVal(0)
             }
         }
     },[val, example])
