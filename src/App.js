@@ -9,11 +9,6 @@ function App() {
     const [command, setCommand] = useState('')
     const [error, setError] = useState(null)
 
-    const reset = () => {
-        setCommand('')
-        setError('')
-        setExample('')
-    }
     const setCommandHandler = (code) => {
         if(!example) {
             setCommand('')
@@ -35,6 +30,13 @@ function App() {
             }
         }
     },[val, example])
+
+    const reset = () => {
+        setCommand('')
+        setError('')
+        setExample('')
+        setVal(0)
+    }
 
     const timer = ms => new Promise(res => setTimeout(res, ms))
 
