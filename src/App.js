@@ -72,11 +72,10 @@ function App() {
                 </div>
                 <button className='reset' onClick={reset}>reset machine</button>
                 <div className='description'>
-                    <p style={{color: 'green'}}>To write the commands use:
-                        'r' to move one step right,
-                        'l' to move one step left,
-                        's' to stop the head of machine.
-                    </p>
+                    <p style={{color: 'green'}}>To write the commands use:</p>
+                    <p style={{color: 'green'}}>'r' to move one step right,</p>
+                    <p style={{color: 'green'}}>'l' to move one step left,</p>
+                    <p style={{color: 'green'}}>'s' to stop the head of machine.</p>
                 </div>
             </header>
 
