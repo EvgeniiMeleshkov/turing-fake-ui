@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EvgeniiMeleshkov/turing-fake-ui/static/css/main.dbc01709.css",
+    "main.js": "/EvgeniiMeleshkov/turing-fake-ui/static/js/main.b7ab513c.js",
+    "static/js/787.c5752b72.chunk.js": "/EvgeniiMeleshkov/turing-fake-ui/static/js/787.c5752b72.chunk.js",
+    "index.html": "/EvgeniiMeleshkov/turing-fake-ui/index.html",
+    "main.dbc01709.css.map": "/EvgeniiMeleshkov/turing-fake-ui/static/css/main.dbc01709.css.map",
+    "main.b7ab513c.js.map": "/EvgeniiMeleshkov/turing-fake-ui/static/js/main.b7ab513c.js.map",
+    "787.c5752b72.chunk.js.map": "/EvgeniiMeleshkov/turing-fake-ui/static/js/787.c5752b72.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbc01709.css",
+    "static/js/main.b7ab513c.js"
+  ]
+}
