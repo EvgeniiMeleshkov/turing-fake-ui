@@ -71,7 +71,15 @@ function App() {
                     <ProgramFrame setError={setError} example={example} engineGo={engineGo} setCommand={setCommandHandler}/>
                 </div>
                 <button className='reset' onClick={reset}>reset machine</button>
+                <div className='description'>
+                    <p style={{color: 'green'}}>To write the commands use:
+                        'r' to move one step right,
+                        'l' to move one step left,
+                        's' to stop the head of machine.
+                    </p>
+                </div>
             </header>
+
         </div>
     );
 }

@@ -56,6 +56,12 @@
 .reset:hover {
   animation: my-animation 800ms linear infinite;
 }
+.description {
+  width: 50%;
+  line-height: 1;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
 
 @keyframes my-animation {
   0% {
