@@ -1,22 +1,23 @@
 .cell {
     position: relative;
     border: 1px solid;
-    width: 33px;
-    height: 33px;
-    color: snow;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    color: green;
 }
 .selected {
     position: relative;
     border: 1px solid;
-    width: 33px;
-    height: 33px;
-    color: snow;
+    width: 30px;
+    height: 30px;
+    color: greenyellow;
 }
 .selected::after {
     position: absolute;
-    background-color: crimson;
-    border: #282c34 1px solid;
-    width: 33px;
+    background-color: greenyellow;
+    border: green 1px solid;
+    width: 30px;
     height: 5px;
     visibility: visible;
     content: '';
