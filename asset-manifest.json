@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/turing-fake-ui/static/css/main.b79cb15c.css",
-    "main.js": "/turing-fake-ui/static/js/main.3b99453e.js",
+    "main.js": "/turing-fake-ui/static/js/main.15089375.js",
     "static/js/787.c5752b72.chunk.js": "/turing-fake-ui/static/js/787.c5752b72.chunk.js",
     "index.html": "/turing-fake-ui/index.html",
     "main.b79cb15c.css.map": "/turing-fake-ui/static/css/main.b79cb15c.css.map",
-    "main.3b99453e.js.map": "/turing-fake-ui/static/js/main.3b99453e.js.map",
+    "main.15089375.js.map": "/turing-fake-ui/static/js/main.15089375.js.map",
     "787.c5752b72.chunk.js.map": "/turing-fake-ui/static/js/787.c5752b72.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b79cb15c.css",
-    "static/js/main.3b99453e.js"
+    "static/js/main.15089375.js"
   ]
 }
