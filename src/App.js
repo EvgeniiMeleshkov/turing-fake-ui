@@ -8,6 +8,7 @@ function App() {
     const [example, setExample] = useState('')
     const [command, setCommand] = useState('')
     const [error, setError] = useState(null)
+    const [value, setValue] = useState('')
 
     const setCommandHandler = (code) => {
         if(!example) {
@@ -20,7 +21,6 @@ function App() {
     }
     let [val, setVal] = useState(0)
 
-    const speed = 400
 
     useEffect(()=>{
         if(example) {
@@ -36,44 +36,31 @@ function App() {
         setError('')
         setExample('')
         setVal(0)
+        setValue('')
     }
 
     const timer = ms => new Promise(res => setTimeout(res, ms))
-
-    async function engineGo () { // We need to wrap the loop into an async function for this to work
-        if(command.match(/^[rRsSlL]+$/)) {
-            for (let i = 0; i < command.length; i++) {
-                if (command[i].toUpperCase() === 'R') {
-                    setVal(val = val + 1)
+    const goHandler = (speed) => {
+        async function engineGo () { // We need to wrap the loop into an async function for this to work
+            if(command.match(/^[rRsSlL]+$/)) {
+                for (let i = 0; i < command.length; i++) {
+                    if (command[i].toUpperCase() === 'R') {
+                        setVal(val = val + 1)
+                    }
+                    if (command[i].toUpperCase() === 'L') {
+                        setVal(val = val - 1)
+                    }
+                    if (command[i].toUpperCase() === 'S') {
+                        setVal(val)
+                    }
+                    await timer(speed); // then the created Promise can be awaited
                 }
-                if (command[i].toUpperCase() === 'L') {
-                    setVal(val = val - 1)
-                }
-                if (command[i].toUpperCase() === 'S') {
-                    setVal(val)
-                }
-                await timer(speed); // then the created Promise can be awaited
+            } else if (!command.match(/^[rRsSlL]+$/)) {
+                setError('wrong command')
             }
-        } else if (!command.match(/^[rRsSlL]+$/)) {
-            setError('wrong command')
         }
-    }
-    const engineGoNoDelay = () => {
-        if(command.match(/^[rRsSlL]+$/)) {
-            for (let i = 0; i < command.length; i++) {
-                if (command[i].toUpperCase() === 'R') {
-                    setVal(val = val + 1)
-                }
-                if (command[i].toUpperCase() === 'L') {
-                    setVal(val = val - 1)
-                }
-                if (command[i].toUpperCase() === 'S') {
-                    setVal(val)
-                }
-            }
-        } else if (!command.match(/^[rRsSlL]+$/)) {
-            setError('wrong command')
-        }
+        engineGo()
+        setValue('')
     }
 
     return (
@@ -86,11 +73,11 @@ function App() {
                 <div>
                     <ExampleField setExample={setExample}/>
                     <Strip example={example} val={val} setVal={setVal}/>
-                    <ProgramFrame setError={setError} example={example} engineGo={engineGo} setCommand={setCommandHandler}/>
+                    <ProgramFrame value={value} setValue={setValue} setError={setError} example={example} engineGo={()=>goHandler(400)} setCommand={setCommandHandler}/>
                 </div>
                 <div>
-                    <button className='reset' onClick={engineGo}>▶︎</button>
-                    <button className='reset' onClick={engineGoNoDelay}>▶︎▶︎■</button>
+                    <button className='reset' onClick={()=>goHandler(400)}>▶︎</button>
+                    <button className='reset' onClick={()=>goHandler(0)}>▶︎▶︎■</button>
                     <button className='reset' onClick={reset}>reset machine</button>
                 </div>
                 <div className='description'>

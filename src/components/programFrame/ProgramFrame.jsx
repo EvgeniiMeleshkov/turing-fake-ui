@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './ProgramFrame.module.css'
 import selfStyle from "../exampleField/ExampleField.module.css";
 
-const ProgramFrame = ({setCommand, engineGo, example, setError}) => {
-    const [value, setValue] = useState('')
+const ProgramFrame = ({value, setValue, setCommand, engineGo, example, setError}) => {
+
 
     const onChange = (e) => {
         let val = e.currentTarget.value
