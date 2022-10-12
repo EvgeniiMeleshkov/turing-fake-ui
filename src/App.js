@@ -58,6 +58,23 @@ function App() {
             setError('wrong command')
         }
     }
+    const engineGoNoDelay = () => {
+        if(command.match(/^[rRsSlL]+$/)) {
+            for (let i = 0; i < command.length; i++) {
+                if (command[i].toUpperCase() === 'R') {
+                    setVal(val = val + 1)
+                }
+                if (command[i].toUpperCase() === 'L') {
+                    setVal(val = val - 1)
+                }
+                if (command[i].toUpperCase() === 'S') {
+                    setVal(val)
+                }
+            }
+        } else if (!command.match(/^[rRsSlL]+$/)) {
+            setError('wrong command')
+        }
+    }
 
     return (
         <div className="App">
@@ -71,7 +88,11 @@ function App() {
                     <Strip example={example} val={val} setVal={setVal}/>
                     <ProgramFrame setError={setError} example={example} engineGo={engineGo} setCommand={setCommandHandler}/>
                 </div>
-                <button className='reset' onClick={reset}>reset machine</button>
+                <div>
+                    <button className='reset' onClick={engineGo}>▶︎</button>
+                    <button className='reset' onClick={engineGoNoDelay}>▶︎▶︎■</button>
+                    <button className='reset' onClick={reset}>reset machine</button>
+                </div>
                 <div className='description'>
                     <p style={{color: 'green'}}>To write the commands use:</p>
                     <p style={{color: 'green'}}>'r' to move one step right,</p>

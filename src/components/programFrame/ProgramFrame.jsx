@@ -16,9 +16,10 @@ const ProgramFrame = ({setCommand, engineGo, example, setError}) => {
     const onSubmitHandler = () => {
         if(!example) {
             setError('Enter example at first')
+            setValue('')
         }
-        engineGo()
         setValue('')
+        engineGo()
     }
     const onEnterPressed = (e) => {
         e.key === 'Enter' && onSubmitHandler()
