@@ -30,10 +30,9 @@ function App() {
     useEffect(()=>{
         if(example) {
             if(val < 0 || val > example.length - 1) {
-                setVal(0)
                 setError('your code is incorrect, Neo')
+                setVal(0)
             }
-            setError('')
         }
     },[val, example])
 
